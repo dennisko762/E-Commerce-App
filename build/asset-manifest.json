@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Amazon-Clone/static/css/main.ef0c254a.chunk.css",
+    "main.js": "/Amazon-Clone/static/js/main.d9bae103.chunk.js",
+    "main.js.map": "/Amazon-Clone/static/js/main.d9bae103.chunk.js.map",
+    "runtime-main.js": "/Amazon-Clone/static/js/runtime-main.2113fc1a.js",
+    "runtime-main.js.map": "/Amazon-Clone/static/js/runtime-main.2113fc1a.js.map",
+    "static/css/2.510fb4b6.chunk.css": "/Amazon-Clone/static/css/2.510fb4b6.chunk.css",
+    "static/js/2.1828720d.chunk.js": "/Amazon-Clone/static/js/2.1828720d.chunk.js",
+    "static/js/2.1828720d.chunk.js.map": "/Amazon-Clone/static/js/2.1828720d.chunk.js.map",
+    "index.html": "/Amazon-Clone/index.html",
+    "static/css/2.510fb4b6.chunk.css.map": "/Amazon-Clone/static/css/2.510fb4b6.chunk.css.map",
+    "static/css/main.ef0c254a.chunk.css.map": "/Amazon-Clone/static/css/main.ef0c254a.chunk.css.map",
+    "static/js/2.1828720d.chunk.js.LICENSE.txt": "/Amazon-Clone/static/js/2.1828720d.chunk.js.LICENSE.txt",
+    "static/media/flag-icon.css": "/Amazon-Clone/static/media/zw.f5ceeff7.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2113fc1a.js",
+    "static/css/2.510fb4b6.chunk.css",
+    "static/js/2.1828720d.chunk.js",
+    "static/css/main.ef0c254a.chunk.css",
+    "static/js/main.d9bae103.chunk.js"
+  ]
+}
