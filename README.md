@@ -1,3 +1,7 @@
+If you want to run the app with "npm start" pls remove the "homepage" entry inside the package.json.
+Link for the deployed App: https://clone-3cbb2.web.app/
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
