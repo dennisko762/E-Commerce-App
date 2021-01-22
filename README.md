@@ -1,8 +1,6 @@
 If you want to run the app with "npm start" pls remove the "homepage" entry inside the package.json.
-Link for the deployed App: https://clone-3cbb2.web.app/
 
-At the moment firebase seems to have server issues.
-If the link for the deployed app doesnt work pls run it on localhost.
+At the moment it seems the application can only run on chrome.
 
 # Getting Started with Create React App
 
