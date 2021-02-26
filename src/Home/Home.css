@@ -1,0 +1,25 @@
+.home {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+
+
+
+
+
+.products{
+  margin-top: 23%;
+  position: absolute;
+  overflow: hidden;
+  padding-left: 5%;
+  padding-right: 5%;
+  top: 15%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+
+
+
+} 
+
+

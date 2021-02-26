@@ -1,20 +1,22 @@
 import React from "react";
+import 'react-app-polyfill/ie11';
+import 'react-app-polyfill/stable';
 import ReactDOM from "react-dom";
+import App from "./Base/App";
 import "./index.css";
-import App from "./App";
+import { LangProvider } from "./LangSwitchComponents/LangContext";
+import { StateProvider } from "./Providers/StateProvider";
+import reducer, { initialState } from "./reducers/reducer";
 import * as serviceWorker from "./serviceWorker";
-import { StateProvider } from "./StateProvider";
-import reducer, { initialState } from "./reducer";
-import { LangProvider } from "./LangContext";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <LangProvider>
-      <StateProvider initialState={initialState} reducer={reducer}>
-        <App />
-      </StateProvider>
-    </LangProvider>
-  </React.StrictMode>,
+
+  <LangProvider>
+    <StateProvider initialState={initialState} reducer={reducer}>
+      <App />
+    </StateProvider>
+  </LangProvider>
+  ,
   document.getElementById("root")
 );
 

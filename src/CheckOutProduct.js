@@ -1,47 +1,49 @@
 import React from "react";
 import "./CheckOutProduct.css";
-import StarRoundedIcon from "@material-ui/icons/StarRounded";
-import { useStateValue } from "./StateProvider";
-import Translate from "react-translate-component";
-import counterpart from "counterpart";
-import en from "./lang/en";
-import de from "./lang/de";
+import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
+import useStyles from './styles';
 
-counterpart.registerTranslations("en", en);
-counterpart.registerTranslations("de", de);
-counterpart.setLocale("en");
+// import Translate from "react-translate-component";
+// import counterpart from "counterpart";
+// import en from "./lang/en";
+// import de from "./lang/de";
 
-function CheckOutProduct({ id, image, title, price, rating }) {
-  const [{ basket }, dispatch] = useStateValue();
+//  counterpart.registerTranslations("en", en);
+//  counterpart.registerTranslations("de", de);
+//  counterpart.setLocale("en");
 
-  const removeFromBasket = () => {
-    dispatch({
-      type: "REMOVE_FROM_BASKET",
-      id: id,
-    });
-  };
+function CheckOutProduct({ item, onUpdateCartQty, onRemoveFromCart }) {
+  // const [{ basket }, dispatch] = useStateValue();
+
+
+  const classes = useStyles();
+
+  const handleUpdateCartQty = (lineItemId, newQuantity) => onUpdateCartQty(lineItemId, newQuantity);
+
+  const handleRemoveFromCart = (lineItemId) => onRemoveFromCart(lineItemId);
+
+
+
 
   return (
-    <div className="checkoutProduct">
-      <img className="checkoutProduct_img" src={image} />
-      <div className="checkoutProduct_info">
-        <p className="checkoutProduct_title">{title}</p>
-        <p className="checkoutProduct_price">
-          <small>$</small>
-          <strong>{price}</strong>
-        </p>
-        <div className="checkoutProduct_rating">
-          {Array(rating)
-            .fill()
-            .map((_, i) => (
-              <p>
-                <StarRoundedIcon className="star" />
-              </p>
-            ))}{" "}
+
+    <Card className="cart-item">
+      <CardMedia image={item.media.source} alt={item.name} className={classes.media} />
+      <CardContent className={classes.cardContent}>
+        <Typography variant="h4">{item.name}</Typography>
+        <Typography variant="h5">{item.line_total.formatted_with_symbol}</Typography>
+      </CardContent>
+      <CardActions className={classes.cardActions}>
+        <div className={classes.buttons}>
+          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity - 1)}>-</Button>
+          <Typography>&nbsp;{item.quantity}&nbsp;</Typography>
+          <Button type="button" size="small" onClick={() => handleUpdateCartQty(item.id, item.quantity + 1)}>+</Button>
         </div>
-        <button onClick={removeFromBasket}>Remove from Basket</button>
-      </div>
-    </div>
+        <Button variant="contained" type="button" color="secondary" onClick={() => handleRemoveFromCart(item.id)}>Remove</Button>
+      </CardActions>
+    </Card>
+
+
   );
 }
 
