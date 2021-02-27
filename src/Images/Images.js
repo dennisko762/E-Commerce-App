@@ -3,13 +3,16 @@ import pic1 from '../Background/pic1.jpg';
 import pic2 from '../Background/pic2.jpg';
 import pic3 from '../Background/pic3.jpg';
 import pic4 from '../Background/pic4.jpg';
-
+import pic5 from '../Background/pic5.jpg'
+import pic6 from '../Background/pic6.jpg'
 
 export default [
     pic1,
     pic2,
     pic3,
     pic4,
+    pic5,
+    pic6,
 
 ];
 

@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
+  background-color: lightslategray;
 }
 
 
@@ -10,6 +11,9 @@
 
 
 .products{
+  padding-top: 5%;
+  width: 100vw;
+  background-color: lightgray;
   margin-top: 23%;
   position: absolute;
   overflow: hidden;

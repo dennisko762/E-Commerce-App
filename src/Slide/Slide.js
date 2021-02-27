@@ -11,7 +11,7 @@ function Slide({ content }) {
         height: 100%;
         width:100%;
         background-image: url('${content}');
-        background-size: cover;
+        background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
 

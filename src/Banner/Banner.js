@@ -2,23 +2,18 @@
 
 
 import React, { useState, useEffect, useRef } from 'react'
-import './Banner.css'
 import Slide from '../Slide/Slide'
-import { css, jsx } from '@emotion/react'
+import { jsx } from '@emotion/react'
 import SliderContent from '../SliderContent/SliderContent'
 import Arrow from '../Arrow/Arrow'
+import useStyles from "./styles"
 function Banner(props) {
 
 
     const { slides } = props
-    console.log(slides)
 
     const getWidth = () => window.innerWidth
-
-
-
-
-
+    const classes = useStyles();
 
 
     const firstSlide = slides[0]
@@ -122,23 +117,7 @@ function Banner(props) {
             activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1
         })
     return (
-        // <div className="banner">
-
-        //     <a className="prev" type="submit">
-        //         &#10094;
-        // </a>
-        //     <a className="next" type="submit">
-        //         &#10095;
-        // </a>
-        //     <Slide></Slide>
-
-
-
-
-
-
-        // </div>
-        <div css={SliderCSS} ref={sliderRef}>
+        <div className={classes.slider} ref={sliderRef}>
             <SliderContent
                 translate={translate}
                 transition={transition}
@@ -163,14 +142,7 @@ function Banner(props) {
 
     )
 }
-const SliderCSS = css`
-position: absolute;
-height: 55vh;
-width: 100vw;
-margin: 0 auto;
-overflow: hidden;
-white-space: nowrap;
-`
+
 
 
 export default Banner
