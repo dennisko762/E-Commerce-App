@@ -6,11 +6,6 @@ For some reason commerce.js doesnt accept my card, hence for the moment we will 
 ## Deployed App
 To see the app in action and try it out visit https://webshopfacelift.netlify.app/#/
 
-
-If you want to run the app with "npm start" pls remove the "homepage" entry inside the package.json.
-
-At the moment it seems the application can only run on chrome.
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
