@@ -1,21 +1,21 @@
-/** @jsx jsx */
 
 import React, { memo } from 'react'
-import { css, jsx } from '@emotion/react'
 
 function Slide({ content }) {
+
+
+
     return (
         <div
-            css={css`
+            style={{
+                height: "100%", width: "100%",
+                backgroundImage: `url('${content}')`,
+                backgroundSize: "contain",
+                backgroundRepeat: "no-repeat",
+                backgroundPosition: "center"
+            }}
 
-        height: 100%;
-        width:100%;
-        background-image: url('${content}');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
 
-      `}
         >
 
 

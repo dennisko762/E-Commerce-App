@@ -1,24 +1,24 @@
-/** @jsx jsx */
 
 
 import React, { useState, useEffect, useRef } from 'react'
 import Slide from '../Slide/Slide'
-import { jsx } from '@emotion/react'
 import SliderContent from '../SliderContent/SliderContent'
 import Arrow from '../Arrow/Arrow'
 import useStyles from "./styles"
 function Banner(props) {
 
-
+    //Bilder werden übergeben
     const { slides } = props
 
     const getWidth = () => window.innerWidth
+
     const classes = useStyles();
 
-
+    //slides initialisieren
     const firstSlide = slides[0]
     const secondSlide = slides[1]
     const lastSlide = slides[slides.length - 1]
+
 
     const [state, setState] = useState({
         activeSlide: 0,
@@ -27,19 +27,24 @@ function Banner(props) {
         _slides: [lastSlide, firstSlide, secondSlide]
     })
 
+    //Konstanten anhand des State erstellen um später darauf zugreifen zu können.
     const { activeSlide, translate, _slides, transition } = state
 
+    //ähnlich zu useState aber Unsere komponente wird nicht neu gerendert wenn sich der
+    //jeweilige current wert ändert.
     const autoPlayRef = useRef()
     const transitionRef = useRef()
     const resizeRef = useRef()
     const sliderRef = useRef()
 
+    //erster useeffect der jedes mal gecalled wird 
     useEffect(() => {
         autoPlayRef.current = nextSlide
         transitionRef.current = smoothTransition
         resizeRef.current = handleResize
+        console.log(getWidth())
     })
-
+    //useEffect der nur beim ersten rendern gecalled wird
     useEffect(() => {
         const slider = sliderRef.current
 
@@ -63,9 +68,9 @@ function Banner(props) {
         let interval = null
 
         if (slides.autoPlay) {
-            interval = setInterval(play, slides.autoPlay * 1000)
+            interval = setInterval(play, slides.autoPlay * 100)
         }
-
+        //für component dimount
         return () => {
             slider.removeEventListener('transitionend', transitionEnd)
             window.removeEventListener('resize', onResize)
@@ -89,6 +94,8 @@ function Banner(props) {
 
         // We're at the last slide.
         if (activeSlide === slides.length - 1)
+            //unser slide array folgt der logik [prev, active, next]
+            //deshalb setzen wir unser previous auf length-2, last ist unser current, und next entsprechend first
             _slides = [slides[slides.length - 2], lastSlide, firstSlide]
         // We're back at the first slide. Just reset to how it was on initial render
         else if (activeSlide === 0) _slides = [lastSlide, firstSlide, secondSlide]
@@ -116,7 +123,9 @@ function Banner(props) {
             translate: 0,
             activeSlide: activeSlide === 0 ? slides.length - 1 : activeSlide - 1
         })
+
     return (
+
         <div className={classes.slider} ref={sliderRef}>
             <SliderContent
                 translate={translate}
@@ -134,7 +143,6 @@ function Banner(props) {
 
             {/*    <Dots slides={slides} activeSlide={activeSlide} /> */}
         </div>
-
 
 
 

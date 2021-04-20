@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { CssBaseline, Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core';
 import { Link, useHistory } from 'react-router-dom';
+import { memo } from 'react'
 
 import { commerce } from '../../lib/commerce';
 import AddressForm from '../AddressForm';
@@ -70,10 +71,10 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
             <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
         </>
     ) : (
-                <div className={classes.spinner}>
-                    <CircularProgress />
-                </div>
-            ));
+        <div className={classes.spinner}>
+            <CircularProgress />
+        </div>
+    ));
 
     if (error) {
         Confirmation = () => (
@@ -84,7 +85,8 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
             </>
         );
     }
-
+    //falls wir uns im ersten Schritt des Checkouts befinden, wird die Adressform dargestellt.
+    //Falls nicht, befinden wir uns im Payment
     const Form = () => (activeStep === 0
         ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} setShippingData={setShippingData} test={test} />
         : <PaymentForm checkoutToken={checkoutToken} nextStep={nextStep} backStep={backStep} shippingData={shippingData} onCaptureCheckout={onCaptureCheckout} timeout={timeout} />);
@@ -103,6 +105,7 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
                             </Step>
                         ))}
                     </Stepper>
+
                     {activeStep === steps.length ? <Confirmation /> : checkoutToken && <Form />}
                 </Paper>
             </main>
@@ -110,4 +113,4 @@ function Checkout({ cart, onCaptureCheckout, order, error }) {
     );
 };
 
-export default Checkout;
+export default memo(Checkout);

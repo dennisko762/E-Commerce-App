@@ -2,9 +2,12 @@
 
 import React from 'react'
 import { css, jsx } from '@emotion/react'
+import { memo } from 'react'
 
 function SliderContent(props) {
     return (
+        //tansform: translateX --> animation zum verschieben entlang der x achse
+        //transition: sorgt für eine zeitliche verzögerung der translate animation
         <div
             css={css`
         transform: translateX(-${props.translate}px);
@@ -19,4 +22,4 @@ function SliderContent(props) {
     )
 }
 
-export default SliderContent
+export default memo(SliderContent)

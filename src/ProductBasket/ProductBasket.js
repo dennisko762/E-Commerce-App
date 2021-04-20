@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { memo } from 'react'
 
 import { fetchMock } from "../LangSwitchComponents/fetchMock";
 import LangContext from "../LangSwitchComponents/LangContext";
@@ -9,8 +10,6 @@ import { Link } from 'react-router-dom';
 import CheckOutProduct from '../CheckOutProduct'
 
 function ProductBasket({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart }) {
-  const { lang, currentLangData } = useContext(LangContext);
-  const [state, setState] = useState([]);
   const classes = useStyles();
   const handleEmptyCart = () => onEmptyCart();
 
@@ -20,9 +19,7 @@ function ProductBasket({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart })
     </Typography>
   );
 
-  useEffect(() => {
-    fetchMock(lang).then(setState);
-  }, [lang]);
+
 
 
   if (!cart.line_items) return 'Loading';
@@ -67,4 +64,4 @@ function ProductBasket({ cart, onUpdateCartQty, onRemoveFromCart, onEmptyCart })
   );
 }
 
-export default ProductBasket;
+export default memo(ProductBasket);

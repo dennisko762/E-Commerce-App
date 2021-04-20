@@ -35,22 +35,22 @@ function App() {
 
     fetchCart();
 
-    auth.onAuthStateChanged((authUser) => {
+    // auth.onAuthStateChanged((authUser) => {
 
-      if (authUser) {
-        console.log(authUser);
-        dispatch({
-          type: "SET_USER",
-          user: authUser,
-        });
-      } else {
-        dispatch({
-          type: "SET_USER",
-          user: null,
-        });
+    //   if (authUser) {
+    //     console.log(authUser);
+    //     dispatch({
+    //       type: "SET_USER",
+    //       user: authUser,
+    //     });
+    //   } else {
+    //     dispatch({
+    //       type: "SET_USER",
+    //       user: null,
+    //     });
 
-      }
-    });
+    //   }
+    // });
 
   }, []);
 

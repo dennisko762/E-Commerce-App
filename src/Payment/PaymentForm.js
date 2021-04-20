@@ -2,6 +2,7 @@ import React from 'react';
 import { Typography, Button, Divider } from '@material-ui/core';
 import { Elements, CardElement, ElementsConsumer } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
+import { memo } from 'react'
 
 import Review from './Review';
 
@@ -63,4 +64,4 @@ function PaymentForm({ checkoutToken, nextStep, backStep, shippingData, onCaptur
     );
 };
 
-export default PaymentForm;
+export default memo(PaymentForm);
