@@ -1,6 +1,10 @@
-If you want to run the app with "npm start" pls remove the "homepage" entry inside the package.json.
+## Some notes in advance
+Note that stripe payment process is not fully functional. Instead you will see a simple "Thank you for your purchase".
+The reason is, that commerce.js requires you to provide a real credit card to unlock stripe payment.
+For some reason commerce.js doesnt accept my card, hence for the moment we will just pretend that we actually payed ;)
 
-At the moment it seems the application can only run on chrome.
+## Deployed App
+To see the app in action and try it out visit https://webshopfacelift.netlify.app/#/
 
 # Getting Started with Create React App
 
