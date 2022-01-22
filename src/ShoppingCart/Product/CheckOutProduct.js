@@ -1,19 +1,11 @@
 import React from "react";
 import "./CheckOutProduct.css";
 import { Typography, Button, Card, CardActions, CardContent, CardMedia } from '@material-ui/core';
-import useStyles from './styles';
+import useStyles from '../../styles';
 
-// import Translate from "react-translate-component";
-// import counterpart from "counterpart";
-// import en from "./lang/en";
-// import de from "./lang/de";
 
-//  counterpart.registerTranslations("en", en);
-//  counterpart.registerTranslations("de", de);
-//  counterpart.setLocale("en");
 
 function CheckOutProduct({ item, onUpdateCartQty, onRemoveFromCart }) {
-  // const [{ basket }, dispatch] = useStateValue();
 
 
   const classes = useStyles();
@@ -28,7 +20,7 @@ function CheckOutProduct({ item, onUpdateCartQty, onRemoveFromCart }) {
   return (
 
     <Card className="cart-item">
-      <CardMedia image={item.media.source} alt={item.name} className={classes.media} />
+      <CardMedia image={item.image.url} alt={item.name} className={classes.media} />
       <CardContent className={classes.cardContent}>
         <Typography variant="h4">{item.name}</Typography>
         <Typography variant="h5">{item.line_total.formatted_with_symbol}</Typography>

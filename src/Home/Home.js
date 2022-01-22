@@ -3,7 +3,6 @@ import Product from "../Product/Product";
 import "./Home.css";
 import { CssBaseline, Grid } from '@material-ui/core'
 import useStyles from '../Product/styles'
-import { memo } from 'react'
 
 function Home({ products, onAddToCart }) {
 
@@ -37,4 +36,4 @@ function Home({ products, onAddToCart }) {
   );
 }
 
-export default memo(Home);
+export default Home;

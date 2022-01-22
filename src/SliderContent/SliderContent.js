@@ -2,7 +2,6 @@
 
 import React from 'react'
 import { css, jsx } from '@emotion/react'
-import { memo } from 'react'
 
 function SliderContent(props) {
     return (
@@ -22,4 +21,4 @@ function SliderContent(props) {
     )
 }
 
-export default memo(SliderContent)
+export default SliderContent;
