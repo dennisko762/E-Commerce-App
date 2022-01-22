@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import React, { memo } from 'react'
+import React from 'react'
 import { css, jsx } from '@emotion/react'
 import leftArrow from '../img/left-arrow.svg'
 import rightArrow from '../img/right-arrow.svg'
@@ -41,4 +41,4 @@ const Arrow = ({ direction, handleClick }) => {
   )
 }
 
-export default memo(Arrow)
+export default Arrow;

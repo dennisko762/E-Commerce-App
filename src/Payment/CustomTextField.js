@@ -1,7 +1,6 @@
 import React from 'react';
 import { useFormContext, Controller } from 'react-hook-form';
 import { TextField, Grid } from '@material-ui/core';
-import { memo } from 'react'
 
 function FormInput({ name, label, required }) {
     const { control } = useFormContext();
@@ -22,4 +21,4 @@ function FormInput({ name, label, required }) {
     );
 }
 
-export default memo(FormInput);
+export default FormInput;

@@ -46,9 +46,6 @@ export default makeStyles((theme) => ({
             },
         },
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
-    },
     image: {
         marginRight: '10px',
     },
