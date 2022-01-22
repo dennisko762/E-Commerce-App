@@ -1,10 +1,12 @@
 ## Some notes in advance
-Note that stripe payment process is not fully functional. Instead you will see a simple "Thank you for your purchase".
-The reason is, that commerce.js requires you to provide a real credit card to unlock stripe payment.
-For some reason commerce.js doesnt accept my card, hence for the moment we will just pretend that we actually payed ;)
+If you opened the deploymenet url first, you probably entered a random credit card number.
+With stripe that wont work. Instead you need to enter the sequence "42" as often as it takes to fill all the fields on the payment site, so simply spam "42".
+You wont see your orders yet, simply cause I havent implemented any account functionality.
+This functionality will however be added soon.
 
 ## Deployed App
-To see the app in action and try it out visit https://webshopfacelift.netlify.app/#/
+To see the app in action and try it out visit https://commercejs-webshop.netlify.app/#/
+
 
 # Getting Started with Create React App
 
